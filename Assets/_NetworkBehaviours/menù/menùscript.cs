@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class menùscript : MonoBehaviour
 {
+    public GameObject oggettiDaAttivare;
+    public GameObject menu;
+
 
     public void selectServer()
     {
-        SceneManager.LoadScene(1);
+        Debug.Log("Attivazione oggetti server");
+        oggettiDaAttivare = GameObject.FindGameObjectWithTag("Server");
+        foreach (Transform t in oggettiDaAttivare.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
+        menu.SetActive(false);
     }
 
     public void selectClient()
     {
-        SceneManager.LoadScene(2);
+        Debug.Log("Attivazione oggetti client");
+        oggettiDaAttivare = GameObject.FindGameObjectWithTag("Client");
+        foreach (Transform t in oggettiDaAttivare.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
+        menu.SetActive(false);
     }
 }

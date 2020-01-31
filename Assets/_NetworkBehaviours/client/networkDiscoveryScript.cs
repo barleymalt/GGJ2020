@@ -25,8 +25,8 @@ public class networkDiscoveryScript : NetworkDiscovery
     {
         StopBroadcast();
         StopAllCoroutines();
-        SceneManager.UnloadSceneAsync("client/client");
-        SceneManager.LoadScene("client/client");
+        SceneManager.UnloadSceneAsync(2);
+        SceneManager.LoadScene(2);
     }
 
     public override void OnReceivedBroadcast(string fromAddress, string data)
